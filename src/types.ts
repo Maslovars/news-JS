@@ -48,3 +48,8 @@ export interface IOptions {
 }
 
 export type ICallback<T> = (data: T) => void;
+
+export enum StatusCodes {
+    code_401 = 401,
+    code_404 = 404,
+}

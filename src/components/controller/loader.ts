@@ -1,9 +1,9 @@
-import { ICallback, IResp, IOptions } from './../../types';
+import { ICallback, IResp, IOptions, StatusCodes } from './../../types';
 
 class Loader {
     readonly baseLink: string;
-    readonly options: IOptions;
-    constructor(baseLink: string, options: IOptions) {
+    readonly options?: IOptions;
+    constructor(baseLink: string, options?: IOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -19,7 +19,7 @@ class Loader {
 
     public errorHandler(res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === StatusCodes.code_401 || res.status === StatusCodes.code_404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }

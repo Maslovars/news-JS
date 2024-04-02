@@ -3,7 +3,7 @@ import { ISource } from '../../../types';
 
 class Sources {
     public draw(data: ISource[]): void {
-        const fragment = document.createDocumentFragment();
+        const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         data.forEach((item: ISource): void => {
@@ -15,7 +15,7 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        (document.querySelector('.sources__list') as HTMLElement).append(fragment);
+        (document.querySelector('.sources') as HTMLElement).append(fragment);
     }
 }
 
