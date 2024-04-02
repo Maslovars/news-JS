@@ -8,10 +8,10 @@ export type ISource = {
     url: string;
 };
 
-export interface ISourcesList {
+export type ISourcesList = {
     status: string;
     sources: ISource[];
-}
+};
 
 export type ISourcesClass = {
     draw(data: ISource[]): void;
@@ -37,3 +37,14 @@ export interface INewsList {
 export interface INewsClass {
     draw(data: INews[]): void;
 }
+
+export interface IResp {
+    endpoint: string;
+    options?: IOptions;
+}
+
+export interface IOptions {
+    [key: string]: string;
+}
+
+export type ICallback<T> = (data: T) => void;
