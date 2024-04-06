@@ -1,10 +1,11 @@
 import AppLoader from './appLoader';
-import { ICallback, INewsList, ISourcesList } from '../../types';
+// import { ICallback, INewsList, ISourcesList } from '../../types';
 import { ENDPOINTS } from '../../constants';
+import { ICallback } from '../../types';
 
 class AppController extends AppLoader {
-    public getSources(callback: ICallback<ISourcesList>): void {
-        super.getResp<ISourcesList>(
+    public getSources<T>(callback: ICallback<T>): void {
+        super.getResp(
             {
                 endpoint: ENDPOINTS.sources,
             },
@@ -12,7 +13,7 @@ class AppController extends AppLoader {
         );
     }
 
-    public getNews(e: Event, callback: ICallback<INewsList>): void {
+    public getNews<T>(e: Event, callback: ICallback<T>): void {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 

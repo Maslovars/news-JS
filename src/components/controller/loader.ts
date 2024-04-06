@@ -1,4 +1,4 @@
-import { ICallback, IResp, IOptions, StatusCodes } from './../../types';
+import { IResp, IOptions, StatusCodes, ICallback } from './../../types';
 
 class Loader {
     readonly baseLink: string;
@@ -42,7 +42,7 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
-            .then((data: T) => callback(data))
+            .then((data) => callback(data))
             .catch((err: Error) => console.error(err));
     }
 }

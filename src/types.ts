@@ -47,9 +47,22 @@ export interface IOptions {
     [key: string]: string;
 }
 
-export type ICallback<T> = (data: T) => void;
+export type ICallback<T> = (data: Readonly<T>) => void;
 
 export enum StatusCodes {
     code_401 = 401,
     code_404 = 404,
+}
+
+export interface IAppController {
+    getSources<T>(callback: ICallback<T>): void;
+    getNews<T>(e: Event, callback: ICallback<T>): void;
+}
+
+export interface IAppView {
+    news: INewsClass;
+    sources: ISourcesClass;
+    drawNews(data: Readonly<INewsList>): void;
+    drawSources(data: Readonly<ISourcesList>): void;
+    drawSearch(data: Readonly<ISourcesList>): void;
 }
