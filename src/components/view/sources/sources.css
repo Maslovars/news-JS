@@ -1,11 +1,14 @@
 .sources {
     display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 120px;
+    flex-wrap: wrap;
     overflow: auto;
     align-items: center;
+    justify-content: center;
     font: 300 1em 'Fira Sans', sans-serif;
+    border: 2px solid #30c5ff;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 15px;
 }
 
 .source__item {
@@ -26,9 +29,17 @@
     color: #69db7e;
     box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
     transform: translateY(-0.25em);
+    outline: none;
 }
 
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (max-width:768px) {
+    .sources {
+        padding: 5px;
+        margin: 10px;
+    }
 }

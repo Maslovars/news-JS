@@ -28,14 +28,29 @@
   box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
   color: #5ad67d;
   transform: translateY(-0.25em);
+  outline: none;
 }
 
 .country {
   text-transform: uppercase;
 }
 
+.search__item {
+  padding: 10px;
+}
+
 @media (max-width:768px) {
+  .search__container {
+    font-size: 16px;
+    gap: 10px;
+  }
+
   .dropdown {
     font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .search__item {
+    padding-right: 0;
   }
 }
