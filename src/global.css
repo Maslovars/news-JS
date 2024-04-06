@@ -34,10 +34,11 @@ header h1 {
 }
 
 footer {
+    padding: 10px 30px;
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 footer .copyright {
@@ -46,11 +47,13 @@ footer .copyright {
     text-align: center;
 }
 
-footer .copyright a {
+footer a {
     color: #444;
+    padding-left: 5px;
+    transition: 0.25s ease;
 }
 
-footer .copyright a:hover {
+footer a:hover {
     color: #555;
 }
 
@@ -60,4 +63,12 @@ footer .copyright:before {
 
 .main {
     flex: 1;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.logo img {
+    width: 100%;
 }
