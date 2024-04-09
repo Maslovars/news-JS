@@ -8,14 +8,13 @@ export type ISource = {
     url: string;
 };
 
-export type ISourcesList = {
+interface IResponse {
     status: string;
-    sources: ISource[];
-};
+}
 
-export type ISourcesClass = {
-    draw(data: ISource[]): void;
-};
+export interface ISourcesList extends IResponse {
+    sources: ISource[];
+}
 
 export interface INews {
     author: string;
@@ -28,14 +27,9 @@ export interface INews {
     urlToImage: string;
 }
 
-export interface INewsList {
-    status: string;
+export interface INewsList extends IResponse {
     totalResults: number;
     articles: INews[];
-}
-
-export interface INewsClass {
-    draw(data: INews[]): void;
 }
 
 export interface IResp {
@@ -52,17 +46,4 @@ export type ICallback<T> = (data: Readonly<T>) => void;
 export enum StatusCodes {
     code_401 = 401,
     code_404 = 404,
-}
-
-export interface IAppController {
-    getSources<T>(callback: ICallback<T>): void;
-    getNews<T>(e: Event, callback: ICallback<T>): void;
-}
-
-export interface IAppView {
-    news: INewsClass;
-    sources: ISourcesClass;
-    drawNews(data: Readonly<INewsList>): void;
-    drawSources(data: Readonly<ISourcesList>): void;
-    drawSearch(data: Readonly<ISourcesList>): void;
 }

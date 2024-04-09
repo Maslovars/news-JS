@@ -1,12 +1,12 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { INews, INewsClass, ISource, ISourcesList, ISourcesClass, INewsList } from '../../types';
+import { INews, ISource, ISourcesList, INewsList } from '../../types';
 import Search from './search/search';
 
 export class AppView {
-    readonly news: INewsClass;
-    readonly sources: ISourcesClass;
-    readonly search: ISourcesClass;
+    readonly news: News;
+    readonly sources: Sources;
+    readonly search: Search;
     constructor() {
         this.news = new News();
         this.sources = new Sources();
