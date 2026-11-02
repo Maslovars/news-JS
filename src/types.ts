@@ -17,14 +17,17 @@ export interface ISourcesList extends IResponse {
 }
 
 export interface INews {
-    author: string;
-    content: string;
-    description: string;
+    author: string | null;
+    content: string | null;
+    description: string | null;
     publishedAt: string;
-    source: Pick<ISource, 'id' | 'name'>;
+    source: {
+        id: string | null;
+        name: string;
+    };
     title: string;
     url: string;
-    urlToImage: string;
+    urlToImage: string | null;
 }
 
 export interface INewsList extends IResponse {

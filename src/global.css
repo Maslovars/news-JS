@@ -23,6 +23,8 @@ body {
 header {
     padding: 10px 30px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -90,5 +92,31 @@ footer .copyright:before {
 
     .logo {
         max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .search__container {
+        width: 100%;
+    }
+
+    .search__item {
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropdown {
+        max-width: 100%;
     }
 }
